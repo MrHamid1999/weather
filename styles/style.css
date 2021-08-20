@@ -1,0 +1,272 @@
+@import url(../fonts/weather-icons-master/css/weather-icons-wind.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: sans-serif;
+    background: #000;
+    height: 100vh;
+}
+
+.container {
+    /* max-width: 1248px; */
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background: url(../images/background.jfif);
+    background-size: cover;
+}
+
+.container .clock {
+    height: 50px;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.clock p {
+    padding: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    background: linear-gradient(to right, rgb(2, 51, 107), rgb(10, 108, 219));
+    width: 20%;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px #0c3f63;
+    text-align: center;
+}
+
+.search {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    height: 35px;
+}
+
+input[type="text"] {
+    height: 100%;
+    width: 300px;
+    border: none;
+    border-radius: 20px;
+}
+
+input[type="text"]:focus {
+    offset: none;
+    outline: none;
+    border: 2px solid rgb(10, 108, 219);
+    padding-left: 10px;
+}
+
+input[type="submit"] {
+    height: 35px;
+    border: none;
+    background-color: rgb(10, 108, 219);
+    color: rgb(240, 240, 240);
+    padding: 0 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.searching-city{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: -200px;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.582);
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    
+}
+.searching-city.clicked{
+    display: flex;
+}
+.searching-city span{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    position: relative;
+}
+.searching-city span:hover{
+    width: 80px;
+    height: 80px;
+    background-color: rgba(204, 204, 204, 0.664);
+    top: -15px;
+    margin-bottom: none;
+    font-size: 2rem;
+
+}
+.other{
+    width: 400px;
+    height: 300px;
+    background: url(../images/other.jpg);
+    background-size:100% 100%;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.502);
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    color: rgb(214, 214, 214);
+    animation: fadeIn 1.2s;
+    background-size: contain;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    margin-top: 50px;
+    position: relative;
+}
+
+.weather-wrapper {
+    margin-top: 100px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.city {
+    width: 400px;
+    height: 300px;
+    /* background-color: rgb(2, 51, 107); */
+    display: none;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    color: rgb(214, 214, 214);
+    animation: fadeIn 1.2s;
+    background-size: contain;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.city.active {
+    display: flex;
+
+}
+.city.london{
+    background: url(../images/london.jpg);
+    background-size: 100% 100%;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.502);
+
+}
+
+.newyork {
+    background: url(../images/newyork.jpg);
+    background-size: 100% 100%;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.502);
+}
+
+.paris {
+    background: url(../images/paris.jpg);
+    background-size: 100% 100%;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.502);
+}
+
+.toronto {
+    background: url(../images/toronto.jpg);
+    background-size: 100% 100%;
+    background-blend-mode: darken;
+background-color: rgba(0, 0, 0, 0.502);
+}
+
+.dubai {
+    background: url(../images/dubai.jpg);
+    background-size: 100% 100%;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.502);
+}
+
+.tokyo {
+    background: url(../images/tokyo.jpg);
+    background-size: 100% 100%;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.502);
+}
+.main-info{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.name {
+    width:70%;
+    /* text-align: center; */
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    position: relative;
+    top: -10px;
+} 
+.temp{
+    width: 30%;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.description{
+width: 100%;
+text-align: center;
+font-size: 1.3rem;
+}
+.other-info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+main >span{
+    font-size: 3rem;
+    position: absolute;
+    top: 30%;
+    cursor: pointer;
+    padding: 8px 30px;
+    border-radius: 50%;
+    background-color: rgba(138, 138, 138, 0.418);
+}
+main> span:hover{
+    background: rgba(17, 17, 17, 0.822);
+    color: #fff;
+}
+.prev-btn{left : 5%}
+.next-btn{right : 5%}
