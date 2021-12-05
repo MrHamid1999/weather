@@ -40,7 +40,7 @@ prevBtn.addEventListener("click", goPrev);
 // adding async requests
 let search = async (city) => {
     let response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}%20&appid=70b05532c12052c9af5ea65e3270b494`)
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}%20&appid=2e4972913fa314ab861a493a42896c52`)
     let data = await response.json()
     return data
 }
